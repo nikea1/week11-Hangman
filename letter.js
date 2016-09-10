@@ -1,41 +1,22 @@
-var Letter = function(word){
+var Letter = function(char){
 	
-	this.word = word;
-	this.wordArray = word.trim().split("");
-	
-	//this runs once
-	(function (array){
-		
-		for(var i = 0; i < array.length; i++){
-			if(array[i] != " ")
-				array[i] = "_"
-			else
-				array[i] = " "
-		}
-	})(this.wordArray)
+	this.showChar = "_";
+	this.secretChar = char;
 
-	this.display = function(){
-		var display = "";
+	this.displayChar = function(){
+		if(this.secretChar == " ")
+			return " ";
 
-		for(var i = 0; i < this.wordArray.length; i++){
-			display+=this.wordArray[i]+" ";
-		}
-
-		console.log(display);
+		return this.showChar;
 	}
 
 	this.revealLetter = function(letter){
-
-		for(var i = 0; i < this.wordArray.length;i++){
-			
-			if(this.word.charAt(i) == letter.toUpperCase() || this.word.charAt(i) == letter.toLowerCase()){
-				
-				this.wordArray[i] = this.word.charAt(i);
-				
-			}
+		if(letter.toLowerCase()  == this.secretChar || letter.toUpperCase()  == this.secretChar){
+			this.showChar = this.secretChar;
+			return true;
 		}
-		
-		this.display();
+		else
+			return false;
 	}
 
 }
