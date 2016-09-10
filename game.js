@@ -15,6 +15,6 @@ var Game = function(){
 
 module.exports = Game;
 
-var game = new Game();
+//var game = new Game();
 
-console.log(game.chosen.word);
+//console.log(game.chosen.word);
