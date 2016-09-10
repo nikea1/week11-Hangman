@@ -32,6 +32,8 @@ var Game = function(){
 			"The Nightmare Before Christmas",
 			"Oliver And Company",
 			];
+
+	//stores a dictionary word as a word object
 	this.chosen = (function(array){
 
 		var r = Math.floor(Math.random()*(array.length));
